@@ -17,7 +17,7 @@ class _LargeScreenLayoutState extends State<LargeScreenLayout> {
     var w = screenSize.width * 0.09;
     return SafeArea(
       child: Scaffold(
-        extendBodyBehindAppBar: true,
+        
         appBar: AppBar(
           titleSpacing: w,
           elevation: 0,
@@ -25,7 +25,7 @@ class _LargeScreenLayoutState extends State<LargeScreenLayout> {
             width: 80,
             child: Image.asset("assets/images/sbox_logo.png"),
           ),
-          backgroundColor: AppTheme.of(context).primaryColor.withOpacity(0.8),
+          backgroundColor: AppTheme.of(context).primaryColor.withOpacity(1),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -66,83 +66,21 @@ class _LargeScreenLayoutState extends State<LargeScreenLayout> {
                                       context,
                                       headerContent,
                                       AppTheme.of(context).title3.override(
-                                          fontWeight: FontWeight.w400),
+                                            fontWeight: FontWeight.w300,
+                                            fontSize: 24,
+                                          ),
                                       AppTheme.of(context).whiteColor,
                                       lineheight: 1.5,
                                     ),
                                     const SizedBox(
                                       height: 20,
                                     ),
-                                    // Row(
-                                    //   children: [
-                                    //     ElevatedButton(
-                                    //       onPressed: () {},
-                                    //       style: ElevatedButton.styleFrom(
-                                    //         shape: RoundedRectangleBorder(
-                                    //             borderRadius:
-                                    //                 BorderRadius.circular(12)),
-                                    //         backgroundColor:
-                                    //             AppTheme.of(context).whiteColor,
-                                    //         elevation: 2,
-                                    //       ),
-                                    //       child: Padding(
-                                    //         padding: const EdgeInsets.all(10.0),
-                                    //         child: Text(
-                                    //           "Book a Demo",
-                                    //           style: AppTheme.of(context)
-                                    //               .bodyText1
-                                    //               .override(
-                                    //                   color:
-                                    //                       AppTheme.of(context)
-                                    //                           .primaryAppText),
-                                    //         ),
-                                    //       ),
-                                    //     ),
-                                    //     const SizedBox(
-                                    //       width: 18,
-                                    //     ),
-                                    //     ElevatedButton(
-                                    //       onPressed: () {},
-                                    //       style: ElevatedButton.styleFrom(
-                                    //         shape: RoundedRectangleBorder(
-                                    //             side: BorderSide(
-                                    //               width: 1,
-                                    //               color: AppTheme.of(context)
-                                    //                   .whiteColor,
-                                    //             ),
-                                    //             borderRadius:
-                                    //                 BorderRadius.circular(12)),
-                                    //         backgroundColor: Colors.transparent,
-                                    //         elevation: 2,
-                                    //       ),
-                                    //       child: Padding(
-                                    //         padding: const EdgeInsets.all(10.0),
-                                    //         child: Text(
-                                    //           "See Plans",
-                                    //           style: AppTheme.of(context)
-                                    //               .bodyText1
-                                    //               .override(
-                                    //                   color:
-                                    //                       AppTheme.of(context)
-                                    //                           .whiteColor),
-                                    //         ),
-                                    //       ),
-                                    //     )
-                                    //   ],
-                                    // ),
                                   ],
                                 ),
                               ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  gradient: RadialGradient(
-                                    colors: [
-                                      AppTheme.of(context).primaryGradient,
-                                      AppTheme.of(context).primaryColor,
-                                    ],
-                                  ),
-                                ),
-                                child: const Image(
+                              const Opacity(
+                                opacity: 0.7,
+                                child: Image(
                                   alignment: Alignment.centerRight,
                                   fit: BoxFit.cover,
                                   image: AssetImage(
