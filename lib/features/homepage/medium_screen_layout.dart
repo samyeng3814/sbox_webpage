@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:sbox_web/core/components/utils.dart';
+import 'package:sbox_web/core/constants.dart';
 import 'package:sbox_web/core/themes/themes.dart';
-import 'package:sbox_web/features/homepage/widgets/top_bar_contents.dart';
 
 class MediumScreenLayout extends StatefulWidget {
   const MediumScreenLayout({super.key});
@@ -31,8 +31,8 @@ class _MediumScreenLayoutState extends State<MediumScreenLayout> {
       appBar: AppBar(
         titleSpacing: w,
         elevation: 0,
-        backgroundColor: AppTheme.of(context).primaryColor.withOpacity(0.5),
-        title: Container(
+        backgroundColor: AppTheme.of(context).primaryColor.withOpacity(0.8),
+        title: SizedBox(
           width: 80,
           child: Image.asset("assets/images/sbox_logo.png"),
         ),
@@ -75,87 +75,20 @@ class _MediumScreenLayoutState extends State<MediumScreenLayout> {
                                       children: [
                                         heroContentText(
                                             context,
-                                            "POWER OF DIGITAL TRANSFORM",
+                                            'POWER OF DIGITAL TRANSFORM',
                                             AppTheme.of(context).mediumTitle2,
                                             AppTheme.of(context).whiteColor),
                                         heroContentText(
                                             context,
-                                            "E-Invoicing Platform for all businesses",
+                                            'E-Invoicing Platform for all businesses',
                                             AppTheme.of(context).mediumTitle1,
                                             AppTheme.of(context).whiteColor),
                                         heroContentText(
-                                            context,
-                                            "It's an app for digitizing invoices to enable smooth one click purchase booking with an inbuilt inventory management system for SMB's. With an on-the-cloud API integration to all available accounting software's.",
-                                            AppTheme.of(context).mediumTitle3,
-                                            AppTheme.of(context).whiteColor),
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              vertical:
-                                                  screenSize.width * 0.02),
-                                          child: Row(
-                                            children: [
-                                              ElevatedButton(
-                                                onPressed: () {},
-                                                style: ElevatedButton.styleFrom(
-                                                  shape: RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              12)),
-                                                  backgroundColor:
-                                                      AppTheme.of(context)
-                                                          .whiteColor,
-                                                  elevation: 2,
-                                                  padding: EdgeInsets.symmetric(
-                                                    horizontal: h * 0.032,
-                                                    vertical: 20,
-                                                  ),
-                                                ),
-                                                child: Text(
-                                                  "Book a Demo",
-                                                  style: AppTheme.of(context)
-                                                      .bodyText1
-                                                      .override(
-                                                          color: AppTheme.of(
-                                                                  context)
-                                                              .primaryAppText),
-                                                ),
-                                              ),
-                                              const SizedBox(
-                                                width: 18,
-                                              ),
-                                              ElevatedButton(
-                                                onPressed: () {},
-                                                style: ElevatedButton.styleFrom(
-                                                  shape: RoundedRectangleBorder(
-                                                      side: BorderSide(
-                                                        width: 1,
-                                                        color:
-                                                            AppTheme.of(context)
-                                                                .whiteColor,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              12)),
-                                                  backgroundColor:
-                                                      Colors.transparent,
-                                                  elevation: 2,
-                                                  padding: EdgeInsets.symmetric(
-                                                    horizontal: h * 0.032,
-                                                    vertical: 20,
-                                                  ),
-                                                ),
-                                                child: Text(
-                                                  "See Plans",
-                                                  style: AppTheme.of(context)
-                                                      .bodyText1
-                                                      .override(
-                                                          color: AppTheme.of(
-                                                                  context)
-                                                              .whiteColor),
-                                                ),
-                                              )
-                                            ],
-                                          ),
+                                          context,
+                                          headerContent,
+                                          AppTheme.of(context).mediumTitle3,
+                                          AppTheme.of(context).whiteColor,
+                                          lineheight: 1.5,
                                         ),
                                       ],
                                     ),
@@ -275,381 +208,151 @@ class _MediumScreenLayoutState extends State<MediumScreenLayout> {
                 ),
               ],
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: screenSize.width > 860 && screenSize.width <= 960
-                      ? screenSize.width * 0.04
-                      : screenSize.width > 960 && screenSize.width <= 1050
-                          ? screenSize.width * 0.065
-                          : screenSize.width > 1050
-                              ? screenSize.width * 0.075
-                              : 0),
-              child: Column(children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: w, vertical: 26),
-                  child: Column(
-                    children: [
-                      Stack(
-                        clipBehavior: Clip.none,
-                        children: [
-                          Row(
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [
+                  Colors.blue.withOpacity(0.1),
+                  Colors.yellow.withOpacity(0.1),
+                ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+              ),
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(
+                  w,
+                  10,
+                  w,
+                  0,
+                ),
+                child: Column(
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "assets/images/startup_portrait.png",
+                          fit: BoxFit.contain,
+                          height: 350,
+                        ),
+                        const SizedBox(
+                          width: 40,
+                        ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const Expanded(flex: 1, child: SizedBox()),
-                              Expanded(
-                                flex: 1,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    heroContentText(
-                                        context,
-                                        "Startups",
-                                        AppTheme.of(context).title1,
-                                        AppTheme.of(context).startUpText,
-                                        textAlign: TextAlign.start),
-                                    heroContentText(
-                                        context,
-                                        "Streamline your startup's visual identity effortlessly with Sbox, your preferred solution for cost-effective design services. Skip the recruitment hassle and contractual commitments – Sbox ensures a seamless design experience without the burden of hiring costs or long-term agreements. Immerse your business in a world of creative possibilities without the traditional constraints, as we handle your design needs with ease and affordability. Embrace a risk-free approach to enhancing your brand aesthetics, and let Sbox be your trusted partner in crafting a visually compelling identity for your startup.",
-                                        AppTheme.of(context).mediumTitle2,
-                                        AppTheme.of(context).startUpText),
-                                    // Column(
-                                    //   children: [
-                                    //     Row(
-                                    //       crossAxisAlignment:
-                                    //           CrossAxisAlignment.center,
-                                    //       children: [
-                                    //         heroContentText(
-                                    //             context,
-                                    //             String.fromCharCode(0x2756),
-                                    //             AppTheme.of(context)
-                                    //                 .mediumTitle2,
-                                    //             AppTheme.of(context)
-                                    //                 .startUpText),
-                                    //         heroContentText(
-                                    //             context,
-                                    //             " No hiring costs",
-                                    //             AppTheme.of(context)
-                                    //                 .mediumTitle2,
-                                    //             AppTheme.of(context)
-                                    //                 .startUpText),
-                                    //       ],
-                                    //     ),
-                                    //     Row(
-                                    //       crossAxisAlignment:
-                                    //           CrossAxisAlignment.center,
-                                    //       children: [
-                                    //         heroContentText(
-                                    //             context,
-                                    //             String.fromCharCode(0x2756),
-                                    //             AppTheme.of(context)
-                                    //                 .mediumTitle2,
-                                    //             AppTheme.of(context)
-                                    //                 .startUpText),
-                                    //         heroContentText(
-                                    //             context,
-                                    //             " No contracts. No risks",
-                                    //             AppTheme.of(context)
-                                    //                 .mediumTitle2,
-                                    //             AppTheme.of(context)
-                                    //                 .startUpText),
-                                    //       ],
-                                    //     )
-                                    //   ],
-                                    // ),
-                                  ],
-                                ),
+                              heroContentText(
+                                context,
+                                "Startups",
+                                AppTheme.of(context).title1,
+                                AppTheme.of(context).startUpText,
+                                textAlign: TextAlign.start,
+                              ),
+                              heroContentText(
+                                context,
+                                startupContent,
+                                AppTheme.of(context)
+                                    .bodyText1
+                                    .override(fontWeight: FontWeight.w400),
+                                AppTheme.of(context).startUpText,
+                                lineheight:
+                                    (MediaQuery.of(context).size.width > 1400)
+                                        ? 1.5
+                                        : 1.2,
                               ),
                             ],
                           ),
-                          Positioned(
-                            top: -screenSize.height * 0.1,
-                            left: -screenSize.width * 0.08,
-                            bottom: 0,
-                            child: SizedBox(
-                              child: LayoutBuilder(
-                                builder: (context, constraints) {
-                                  return Transform.scale(
-                                    scaleY: 1.01,
-                                    scaleX: 0.7,
-                                    child: Image.asset(
-                                      "assets/images/startup_portrait.png",
-                                      fit: BoxFit.contain,
-                                    ),
-                                  );
-                                },
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            top: 14,
-                            right: screenSize.width > 860
-                                ? screenSize.width / 2 - screenSize.width * 0.08
-                                : screenSize.width / 2 - 20,
-                            child: SizedBox(
-                              width: screenSize.width * 0.16,
-                              child: Divider(
-                                color: AppTheme.of(context).startUpText,
-                                thickness: 1,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                // const SizedBox(
-                //   height: 40,
-                // ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: w, vertical: 26),
-                  child: Column(
-                    children: [
-                      Stack(
-                        clipBehavior: Clip.none,
-                        children: [
-                          Stack(
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Container(
-                                height: screenSize.height * 0.22,
-                                width: screenSize.width > 860
-                                    ? screenSize.width * 0.58
-                                    : screenSize.width * 0.65,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: AppTheme.of(context).marketText,
-                                      width: 1,
-                                      style: BorderStyle.solid),
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(1),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  padding:
-                                      const EdgeInsets.only(top: 20, left: 30),
-                                  child: Row(
-                                    children: [
-                                      Expanded(
-                                        flex: 1,
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            heroContentText(
-                                                context,
-                                                "Martketing Teams",
-                                                AppTheme.of(context).title1,
-                                                AppTheme.of(context).marketText,
-                                                textAlign: TextAlign.start),
-                                            heroContentText(
-                                                context,
-                                                "Elevate your marketing game with Sbox. There is no more need to conduct endless interviews to find the right graphic designers. Our adept team of Sbox Crafters is poised to deliver top-notch graphics effortlessly, freeing up your time to focus on achieving your marketing objectives. Enjoy a swifter turnaround without compromising on quality, thanks to our rigorous quality control process applied to every creative project. Choose Sbox to enhance your marketing endeavors, where seamless efficiency meets exceptional design.",
-                                                AppTheme.of(context)
-                                                    .mediumTitle2,
-                                                AppTheme.of(context)
-                                                    .marketText),
-                                            // Column(
-                                            //   children: [
-                                            //     Row(
-                                            //       crossAxisAlignment:
-                                            //           CrossAxisAlignment.center,
-                                            //       children: [
-                                            //         heroContentText(
-                                            //             context,
-                                            //             String.fromCharCode(
-                                            //                 0x2756),
-                                            //             AppTheme.of(context)
-                                            //                 .mediumTitle2,
-                                            //             AppTheme.of(context)
-                                            //                 .marketText),
-                                            //         heroContentText(
-                                            //             context,
-                                            //             " Faster Turnaround",
-                                            //             AppTheme.of(context)
-                                            //                 .mediumTitle2,
-                                            //             AppTheme.of(context)
-                                            //                 .marketText),
-                                            //       ],
-                                            //     ),
-                                            //     Row(
-                                            //       crossAxisAlignment:
-                                            //           CrossAxisAlignment.center,
-                                            //       children: [
-                                            //         heroContentText(
-                                            //             context,
-                                            //             String.fromCharCode(
-                                            //                 0x2756),
-                                            //             AppTheme.of(context)
-                                            //                 .mediumTitle2,
-                                            //             AppTheme.of(context)
-                                            //                 .marketText),
-                                            //         heroContentText(
-                                            //             context,
-                                            //             " Quality Control for each creative",
-                                            //             AppTheme.of(context)
-                                            //                 .mediumTitle2,
-                                            //             AppTheme.of(context)
-                                            //                 .marketText),
-                                            //       ],
-                                            //     )
-                                            //   ],
-                                            // ),
-                                          ],
-                                        ),
-                                      ),
-                                      const Expanded(
-                                          flex: 1, child: SizedBox()),
-                                    ],
-                                  ),
-                                ),
+                              heroContentText(
+                                  context,
+                                  "Marketing Teams",
+                                  AppTheme.of(context).title1,
+                                  AppTheme.of(context).startUpText,
+                                  textAlign: TextAlign.start),
+                              heroContentText(
+                                context,
+                                marketingTeamsContent,
+                                AppTheme.of(context)
+                                    .bodyText1
+                                    .override(fontWeight: FontWeight.w400),
+                                AppTheme.of(context).startUpText,
+                                lineheight:
+                                    (MediaQuery.of(context).size.width > 1400)
+                                        ? 1.5
+                                        : 1.2,
                               ),
                             ],
                           ),
-                          Positioned(
-                            top: -screenSize.height * 0.08,
-                            right: -screenSize.width * 0.1,
-                            child: SizedBox(
-                              child: LayoutBuilder(
-                                builder: (context, constraints) {
-                                  return Transform.scale(
-                                    scaleY: 0.8,
-                                    scaleX: 0.8,
-                                    child: Image.asset(
-                                      "assets/images/marketing_team_avatar_portrait.png",
-                                      fit: BoxFit.contain,
-                                    ),
-                                  );
-                                },
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: w, vertical: 26),
-                  child: Column(
-                    children: [
-                      Stack(
-                        clipBehavior: Clip.none,
-                        children: [
-                          Row(
+                        ),
+                        Image.asset(
+                          "assets/images/marketing_team_avatar_portrait.png",
+                          fit: BoxFit.contain,
+                          height: 350,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "assets/images/app_dev_avatar_portrait.png",
+                          fit: BoxFit.cover,
+                          height: 350,
+                        ),
+                        const SizedBox(
+                          width: 40,
+                        ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Expanded(flex: 1, child: SizedBox()),
-                              Expanded(
-                                flex: 1,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    heroContentText(
-                                        context,
-                                        "App Development",
-                                        AppTheme.of(context).title1,
-                                        AppTheme.of(context).appDevText,
-                                        textAlign: TextAlign.start),
-                                    heroContentText(
-                                        context,
-                                        "Enhance your business focus by relying on SBOX for your app development requirements—a streamlined and cost-effective solution. With no hiring costs or contractual obligations, you can minimize risks while receiving top-tier app development services tailored to your specific needs. Entrust SBOX to elevate your app development seamlessly, allowing you to concentrate on your core business endeavors.",
-                                        AppTheme.of(context).mediumTitle2,
-                                        AppTheme.of(context).appDevText),
-                                    // Column(
-                                    //   children: [
-                                    //     Row(
-                                    //       crossAxisAlignment:
-                                    //           CrossAxisAlignment.center,
-                                    //       children: [
-                                    //         heroContentText(
-                                    //             context,
-                                    //             String.fromCharCode(0x2756),
-                                    //             AppTheme.of(context)
-                                    //                 .mediumTitle2,
-                                    //             AppTheme.of(context)
-                                    //                 .appDevText),
-                                    //         heroContentText(
-                                    //             context,
-                                    //             " Faster Turnaround",
-                                    //             AppTheme.of(context)
-                                    //                 .mediumTitle2,
-                                    //             AppTheme.of(context)
-                                    //                 .appDevText),
-                                    //       ],
-                                    //     ),
-                                    //     Row(
-                                    //       crossAxisAlignment:
-                                    //           CrossAxisAlignment.center,
-                                    //       children: [
-                                    //         heroContentText(
-                                    //             context,
-                                    //             String.fromCharCode(0x2756),
-                                    //             AppTheme.of(context)
-                                    //                 .mediumTitle2,
-                                    //             AppTheme.of(context)
-                                    //                 .appDevText),
-                                    //         heroContentText(
-                                    //             context,
-                                    //             " Quality Control for each creative",
-                                    //             AppTheme.of(context)
-                                    //                 .mediumTitle2,
-                                    //             AppTheme.of(context)
-                                    //                 .appDevText),
-                                    //       ],
-                                    //     )
-                                    //   ],
-                                    // ),
-                                  ],
-                                ),
+                              heroContentText(
+                                context,
+                                "App Development",
+                                AppTheme.of(context).title1,
+                                AppTheme.of(context).startUpText,
+                                textAlign: TextAlign.start,
+                              ),
+                              heroContentText(
+                                context,
+                                appDevelopmentContent,
+                                AppTheme.of(context)
+                                    .bodyText1
+                                    .override(fontWeight: FontWeight.w400),
+                                AppTheme.of(context).startUpText,
+                                lineheight:
+                                    (MediaQuery.of(context).size.width > 1400)
+                                        ? 1.5
+                                        : 1.2,
                               ),
                             ],
                           ),
-                          Positioned(
-                            top: -screenSize.height * 0.16,
-                            left: -screenSize.width * 0.14,
-                            child: SizedBox(
-                              child: LayoutBuilder(
-                                builder: (context, constraints) {
-                                  return Transform.scale(
-                                    scaleY: 0.81,
-                                    scaleX: 0.72,
-                                    child: Image.asset(
-                                      "assets/images/app_dev_avatar_portrait.png",
-                                      fit: BoxFit.contain,
-                                    ),
-                                  );
-                                },
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            top: 14,
-                            right: screenSize.width > 860
-                                ? screenSize.width / 2 - screenSize.width * 0.08
-                                : screenSize.width / 2 - 20,
-                            child: SizedBox(
-                              width: screenSize.width * 0.16,
-                              child: Divider(
-                                color: AppTheme.of(context).appDevText,
-                                thickness: 1,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                  ],
                 ),
-                const SizedBox(
-                  height: 40,
-                ),
-              ]),
+              ),
             ),
           ],
         ),

@@ -16,7 +16,7 @@ class _TopBarContentsState extends State<TopBarContents> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    var w;
+    double? w;
     if (screenSize.width >= 980) {
       w = screenSize.width * 0.1;
     } else {

@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:sbox_web/core/components/responsive.dart';
@@ -49,13 +47,16 @@ Column typeOfServices(
 
 Padding heroContentText(
     BuildContext context, String content, TextStyle style, Color textColor,
-    {TextAlign? textAlign}) {
+    {TextAlign? textAlign, double? lineheight}) {
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 15).copyWith(top: 0),
     child: Text(
       content,
       textAlign: textAlign,
-      style: style.override(color: textColor),
+      style: style.override(
+        color: textColor,
+        lineHeight: lineheight,
+      ),
     ),
   );
 }

@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:sbox_web/core/components/utils.dart';
+import 'package:sbox_web/core/constants.dart';
 import 'package:sbox_web/core/themes/themes.dart';
 
 class SmallScreenLayout extends StatelessWidget {
@@ -11,7 +12,6 @@ class SmallScreenLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    var h = screenSize.height;
     return Scaffold(
       backgroundColor: Colors.white,
       extendBodyBehindAppBar: true,
@@ -21,7 +21,7 @@ class SmallScreenLayout extends StatelessWidget {
           'assets/images/sbox_logo.png',
           height: 35,
         ),
-        backgroundColor: AppTheme.of(context).primaryColor.withOpacity(0.5),
+        backgroundColor: AppTheme.of(context).primaryColor.withOpacity(0.8),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -75,65 +75,12 @@ class SmallScreenLayout extends StatelessWidget {
                       ),
                       heroContentText(
                         context,
-                        "It's an app for digitizing invoices to enable smooth one click purchase booking with an inbuilt inventory management system for SMB's. With an on-the-cloud API integration to all available accounting software's.",
+                        headerContent,
                         AppTheme.of(context).bodyText1,
                         AppTheme.of(context).whiteColor,
                       ),
                       const SizedBox(
                         height: 20,
-                      ),
-                      Row(
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12)),
-                              backgroundColor: AppTheme.of(context).whiteColor,
-                              elevation: 2,
-                              padding: EdgeInsets.symmetric(
-                                horizontal: h * 0.032,
-                                vertical: 20,
-                              ),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                "Book a Demo",
-                                style: AppTheme.of(context).bodyText1.override(
-                                    color: AppTheme.of(context).primaryAppText),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 24,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                  side: BorderSide(
-                                    width: 1,
-                                    color: AppTheme.of(context).whiteColor,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12)),
-                              backgroundColor: Colors.transparent,
-                              elevation: 2,
-                              padding: EdgeInsets.symmetric(
-                                horizontal: h * 0.032,
-                                vertical: 20,
-                              ),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                "See Plans",
-                                style: AppTheme.of(context).bodyText1.override(
-                                    color: AppTheme.of(context).whiteColor),
-                              ),
-                            ),
-                          )
-                        ],
                       ),
                     ],
                   ),
@@ -240,17 +187,6 @@ class SmallScreenLayout extends StatelessWidget {
                     ),
                   ),
                 ),
-                // Positioned(
-                //   top: 44,
-                //   right: MediaQuery.of(context).size.width / 2 + 4,
-                //   child: SizedBox(
-                //     width: 140,
-                //     child: Divider(
-                //       color: AppTheme.of(context).startUpText,
-                //       thickness: 1,
-                //     ),
-                //   ),
-                // ),
                 BackdropFilter(
                   filter: ImageFilter.blur(
                     sigmaX: 6,
@@ -274,49 +210,11 @@ class SmallScreenLayout extends StatelessWidget {
                               textAlign: TextAlign.start),
                           heroContentText(
                               context,
-                              "Streamline your startup's visual identity effortlessly with Sbox, your preferred solution for cost-effective design services. Skip the recruitment hassle and contractual commitments – Sbox ensures a seamless design experience without the burden of hiring costs or long-term agreements. Immerse your business in a world of creative possibilities without the traditional constraints, as we handle your design needs with ease and affordability. Embrace a risk-free approach to enhancing your brand aesthetics, and let Sbox be your trusted partner in crafting a visually compelling identity for your startup.",
+                              startupContent,
                               AppTheme.of(context)
                                   .title3
                                   .copyWith(fontWeight: FontWeight.w400),
                               AppTheme.of(context).startUpText),
-                          // Column(
-                          //   children: [
-                          //     Row(
-                          //       crossAxisAlignment: CrossAxisAlignment.center,
-                          //       children: [
-                          //         heroContentText(
-                          //             context,
-                          //             String.fromCharCode(0x2756),
-                          //             AppTheme.of(context).title3.copyWith(
-                          //                 fontWeight: FontWeight.w400),
-                          //             AppTheme.of(context).startUpText),
-                          //         heroContentText(
-                          //             context,
-                          //             " No hiring costs",
-                          //             AppTheme.of(context).title3.copyWith(
-                          //                 fontWeight: FontWeight.w400),
-                          //             AppTheme.of(context).startUpText),
-                          //       ],
-                          //     ),
-                          //     Row(
-                          //       crossAxisAlignment: CrossAxisAlignment.center,
-                          //       children: [
-                          //         heroContentText(
-                          //             context,
-                          //             String.fromCharCode(0x2756),
-                          //             AppTheme.of(context).title3.copyWith(
-                          //                 fontWeight: FontWeight.w400),
-                          //             AppTheme.of(context).startUpText),
-                          //         heroContentText(
-                          //             context,
-                          //             " No contracts. No risks",
-                          //             AppTheme.of(context).title3.copyWith(
-                          //                 fontWeight: FontWeight.w400),
-                          //             AppTheme.of(context).startUpText),
-                          //       ],
-                          //     )
-                          //   ],
-                          // ),
                         ],
                       ),
                     ),
@@ -327,35 +225,13 @@ class SmallScreenLayout extends StatelessWidget {
             Stack(
               clipBehavior: Clip.none,
               children: [
-                // Positioned(
-                //   right: 28,
-                //   top: -1,
-                //   child: Container(
-                //     height: screenSize.height * 0.22,
-                //     width: screenSize.width * 0.58,
-                //     decoration: BoxDecoration(
-                //       border: Border.all(
-                //           color: AppTheme.of(context).marketText,
-                //           width: 1,
-                //           style: BorderStyle.solid),
-                //       borderRadius: BorderRadius.circular(30),
-                //     ),
-                //   ),
-                // ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 0)
                       .copyWith(top: 0, right: 0),
                   child: Container(
                     padding: const EdgeInsets.all(20).copyWith(right: 10),
-                    // width: double.infinity,
-
                     decoration: BoxDecoration(
                       color: AppTheme.of(context).whiteColor,
-                      // image: const DecorationImage(
-                      //   image: AssetImage(
-                      //     'assets/images/startup_portrait.png',
-                      //   ),
-                      // ),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -368,53 +244,11 @@ class SmallScreenLayout extends StatelessWidget {
                             textAlign: TextAlign.start),
                         heroContentText(
                             context,
-                            "Elevate your marketing game with Sbox. There is no more need to conduct endless interviews to find the right graphic designers. Our adept team of Sbox Crafters is poised to deliver top-notch graphics effortlessly, freeing up your time to focus on achieving your marketing objectives. Enjoy a swifter turnaround without compromising on quality, thanks to our rigorous quality control process applied to every creative project. Choose Sbox to enhance your marketing endeavors, where seamless efficiency meets exceptional design.",
+                            marketingTeamsContent,
                             AppTheme.of(context)
                                 .title3
                                 .copyWith(fontWeight: FontWeight.w400),
                             AppTheme.of(context).marketText),
-                        // Column(
-                        //   children: [
-                        //     Row(
-                        //       crossAxisAlignment: CrossAxisAlignment.center,
-                        //       children: [
-                        //         heroContentText(
-                        //             context,
-                        //             String.fromCharCode(0x2756),
-                        //             AppTheme.of(context)
-                        //                 .title3
-                        //                 .copyWith(fontWeight: FontWeight.w400),
-                        //             AppTheme.of(context).marketText),
-                        //         heroContentText(
-                        //             context,
-                        //             " Faster Turnaround",
-                        //             AppTheme.of(context)
-                        //                 .title3
-                        //                 .copyWith(fontWeight: FontWeight.w400),
-                        //             AppTheme.of(context).marketText),
-                        //       ],
-                        //     ),
-                        //     Row(
-                        //       crossAxisAlignment: CrossAxisAlignment.center,
-                        //       children: [
-                        //         heroContentText(
-                        //             context,
-                        //             String.fromCharCode(0x2756),
-                        //             AppTheme.of(context)
-                        //                 .title3
-                        //                 .copyWith(fontWeight: FontWeight.w400),
-                        //             AppTheme.of(context).marketText),
-                        //         heroContentText(
-                        //             context,
-                        //             " Quality Control for each creative",
-                        //             AppTheme.of(context)
-                        //                 .title3
-                        //                 .copyWith(fontWeight: FontWeight.w400),
-                        //             AppTheme.of(context).marketText),
-                        //       ],
-                        //     )
-                        //   ],
-                        // ),
                       ],
                     ),
                   ),
@@ -456,14 +290,6 @@ class SmallScreenLayout extends StatelessWidget {
                       child: Container(
                         padding: const EdgeInsets.all(20),
                         width: double.infinity,
-                        // decoration: BoxDecoration(
-                        // color: AppTheme.of(context).whiteColor,
-                        // image: const DecorationImage(
-                        //   image: AssetImage(
-                        //     'assets/images/startup_portrait.png',
-                        //   ),
-                        // ),
-                        // ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -475,49 +301,11 @@ class SmallScreenLayout extends StatelessWidget {
                                 textAlign: TextAlign.start),
                             heroContentText(
                                 context,
-                                "Enhance your business focus by relying on SBOX for your app development requirements—a streamlined and cost-effective solution. With no hiring costs or contractual obligations, you can minimize risks while receiving top-tier app development services tailored to your specific needs. Entrust SBOX to elevate your app development seamlessly, allowing you to concentrate on your core business endeavors.",
+                                appDevelopmentContent,
                                 AppTheme.of(context)
                                     .title3
                                     .copyWith(fontWeight: FontWeight.w400),
                                 AppTheme.of(context).appDevText),
-                            // Column(
-                            //   children: [
-                            //     Row(
-                            //       crossAxisAlignment: CrossAxisAlignment.center,
-                            //       children: [
-                            //         heroContentText(
-                            //             context,
-                            //             String.fromCharCode(0x2756),
-                            //             AppTheme.of(context).title3.copyWith(
-                            //                 fontWeight: FontWeight.w400),
-                            //             AppTheme.of(context).appDevText),
-                            //         heroContentText(
-                            //             context,
-                            //             " Faster Turnaround",
-                            //             AppTheme.of(context).title3.copyWith(
-                            //                 fontWeight: FontWeight.w400),
-                            //             AppTheme.of(context).appDevText),
-                            //       ],
-                            //     ),
-                            //     Row(
-                            //       crossAxisAlignment: CrossAxisAlignment.center,
-                            //       children: [
-                            //         heroContentText(
-                            //             context,
-                            //             String.fromCharCode(0x2756),
-                            //             AppTheme.of(context).title3.copyWith(
-                            //                 fontWeight: FontWeight.w400),
-                            //             AppTheme.of(context).appDevText),
-                            //         heroContentText(
-                            //             context,
-                            //             " Quality Control for each creative",
-                            //             AppTheme.of(context).title3.copyWith(
-                            //                 fontWeight: FontWeight.w400),
-                            //             AppTheme.of(context).appDevText),
-                            //       ],
-                            //     )
-                            //   ],
-                            // ),
                           ],
                         ),
                       ),
