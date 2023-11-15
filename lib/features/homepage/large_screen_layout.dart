@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sbox_web/core/components/utils.dart';
 import 'package:sbox_web/core/constants.dart';
 import 'package:sbox_web/core/themes/themes.dart';
@@ -11,13 +12,24 @@ class LargeScreenLayout extends StatefulWidget {
 }
 
 class _LargeScreenLayoutState extends State<LargeScreenLayout> {
+  FocusNode nameFocusNode = FocusNode();
+  FocusNode mailFocusNode = FocusNode();
+
+  FocusNode subjectFocusNode = FocusNode();
+
+  FocusNode messageFocusNode = FocusNode();
+
+  TextEditingController nameController = TextEditingController();
+  TextEditingController mailController = TextEditingController();
+  TextEditingController subjectController = TextEditingController();
+  TextEditingController messageController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     var w = screenSize.width * 0.09;
     return SafeArea(
       child: Scaffold(
-        
+        backgroundColor: Colors.white,
         appBar: AppBar(
           titleSpacing: w,
           elevation: 0,
@@ -325,6 +337,299 @@ class _LargeScreenLayoutState extends State<LargeScreenLayout> {
                       ),
                     ],
                   ),
+                ),
+              ),
+              Container(
+                alignment: Alignment.center,
+                padding: EdgeInsets.fromLTRB(
+                  screenSize.width * 0.18,
+                  20,
+                  screenSize.width * 0.18,
+                  20,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 16, vertical: 14),
+                                child: heroContentText(
+                                    context,
+                                    'CONTACT US',
+                                    AppTheme.of(context).title2,
+                                    AppTheme.of(context).primaryAppText)),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 14),
+                              child: heroContentText(
+                                context,
+                                'Let\'s Connect',
+                                AppTheme.of(context).title1,
+                                AppTheme.of(context).blackColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 60.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 34,
+                                      width: 34,
+                                      child: SvgPicture.asset(
+                                          "assets/svg/location_arrow.svg"),
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 16),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            heroContentText(
+                                                context,
+                                                'Location',
+                                                AppTheme.of(context).title2,
+                                                AppTheme.of(context)
+                                                    .blackColor),
+                                            heroContentText(
+                                                context,
+                                                '228, SBOX TECH PRIVATE LIMITED, Bommasandra Industrial Area Phase 3, Bangalore, Darnataka - 560099',
+                                                AppTheme.of(context)
+                                                    .mediumTitle3,
+                                                AppTheme.of(context)
+                                                    .secondaryText),
+                                            const SizedBox(
+                                              height: 14,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 20.0),
+                                  child: Divider(
+                                    color: AppTheme.of(context).primaryAppText,
+                                    height: 1,
+                                    thickness: 1,
+                                  ),
+                                ),
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 34,
+                                      width: 34,
+                                      child: SvgPicture.asset(
+                                          "assets/svg/envelope_solid.svg"),
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 16),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            heroContentText(
+                                                context,
+                                                'Contact',
+                                                AppTheme.of(context).title2,
+                                                AppTheme.of(context)
+                                                    .blackColor),
+                                            heroContentText(
+                                                context,
+                                                'info@sbox.ltd',
+                                                AppTheme.of(context)
+                                                    .mediumTitle3,
+                                                AppTheme.of(context)
+                                                    .secondaryText),
+                                            const SizedBox(
+                                              height: 14,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 20.0),
+                                  child: Divider(
+                                    color: AppTheme.of(context).primaryAppText,
+                                    height: 1,
+                                    thickness: 1,
+                                  ),
+                                ),
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 34,
+                                      width: 34,
+                                      child: SvgPicture.asset(
+                                          "assets/svg/phone_solid.svg"),
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 16),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            heroContentText(
+                                                context,
+                                                'Contact',
+                                                AppTheme.of(context).title2,
+                                                AppTheme.of(context)
+                                                    .blackColor),
+                                            heroContentText(
+                                                context,
+                                                '+91 7200474487',
+                                                AppTheme.of(context)
+                                                    .mediumTitle3,
+                                                AppTheme.of(context)
+                                                    .secondaryText),
+                                            const SizedBox(
+                                              height: 14,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 60.0),
+                            child: Column(
+                              children: [
+                                Form(
+                                    child: Column(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 14.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          heroContentText(
+                                            context,
+                                            'Your Name',
+                                            AppTheme.of(context).mediumTitle2,
+                                            AppTheme.of(context).blackColor,
+                                          ),
+                                          textFormField(context, nameFocusNode,
+                                              nameController, "Your Name", 1),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 14.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          heroContentText(
+                                            context,
+                                            'Your Mail',
+                                            AppTheme.of(context).mediumTitle2,
+                                            AppTheme.of(context).blackColor,
+                                          ),
+                                          textFormField(context, mailFocusNode,
+                                              mailController, "Your Mail", 1),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 14.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          heroContentText(
+                                            context,
+                                            'Your Subject',
+                                            AppTheme.of(context).mediumTitle2,
+                                            AppTheme.of(context).blackColor,
+                                          ),
+                                          textFormField(
+                                              context,
+                                              subjectFocusNode,
+                                              subjectController,
+                                              "Your Subject",
+                                              1),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 14.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          heroContentText(
+                                            context,
+                                            'Your Message',
+                                            AppTheme.of(context).mediumTitle2,
+                                            AppTheme.of(context).blackColor,
+                                          ),
+                                          textFormField(
+                                              context,
+                                              messageFocusNode,
+                                              messageController,
+                                              "Your Message",
+                                              5),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ))
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ],

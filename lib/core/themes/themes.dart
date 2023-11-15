@@ -65,7 +65,7 @@ class LightModeTheme extends AppTheme {
   late Color secondaryText = const Color(0xFFA7A7A7);
   late Color whiteColor = const Color(0xFFFFFFFF);
   late Color blackColor = const Color(0xFF000000);
-  late Color tertiaryColorPlus = const Color.fromARGB(255, 204, 204, 204);
+  late Color tertiaryColorPlus = const Color(0xFFD5E9F9);
   late Color secondaryGradiant1 = const Color(0xFF511F20);
   late Color secondaryGradiant2 = const Color(0xFFAC5B5B);
   late Color startUpText = const Color(0xFF3C465F);

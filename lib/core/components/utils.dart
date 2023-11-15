@@ -72,3 +72,35 @@ CarouselSlider carouselSliderWidget(BuildContext context) {
     ),
   );
 }
+
+TextFormField textFormField(BuildContext context, FocusNode focusNode,
+    TextEditingController controller, String hintText, int maxLines) {
+  return TextFormField(
+    obscureText: false,
+    focusNode: focusNode,
+    controller: controller,
+    decoration: InputDecoration(
+      fillColor: Colors.white,
+      filled: true,
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: AppTheme.of(context).tertiaryColorPlus,
+          width: 3,
+        ),
+      ),
+      hintText: hintText,
+      enabledBorder: const OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Colors.black38,
+        ),
+      ),
+    ),
+    validator: (val) {
+      if (val == null || val.isEmpty) {
+        return 'Enter your $hintText';
+      }
+      return null;
+    },
+    maxLines: maxLines,
+  );
+}
