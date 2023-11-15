@@ -455,88 +455,94 @@ class _MediumScreenLayoutState extends State<MediumScreenLayout> {
                               ),
                             ),
                             Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  height: 34,
-                                  width: 34,
-                                  child: SvgPicture.asset(
-                                      "assets/svg/envelope_solid.svg"),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 16),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        heroContentText(
-                                            context,
-                                            'Contact',
-                                            AppTheme.of(context).title2,
-                                            AppTheme.of(context).blackColor),
-                                        heroContentText(
-                                            context,
-                                            'info@sbox.ltd',
-                                            AppTheme.of(context).mediumTitle3,
-                                            AppTheme.of(context).secondaryText),
-                                        const SizedBox(
-                                          height: 14,
-                                        ),
-                                      ],
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 34,
+                                      width: 34,
+                                      child: SvgPicture.asset(
+                                          "assets/svg/envelope_solid.svg"),
                                     ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 16),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            heroContentText(
+                                                context,
+                                                'Email',
+                                                AppTheme.of(context).title2,
+                                                AppTheme.of(context)
+                                                    .blackColor),
+                                            heroContentText(
+                                                context,
+                                                'vel@sbox.ltd\nvel@sameta.in',
+                                                AppTheme.of(context)
+                                                    .mediumTitle3,
+                                                AppTheme.of(context)
+                                                    .secondaryText),
+                                            const SizedBox(
+                                              height: 14,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 20.0),
+                                  child: Divider(
+                                    color: AppTheme.of(context)
+                                        .primaryAppText
+                                        .withOpacity(0.3),
+                                    height: 1,
+                                    thickness: 1,
                                   ),
                                 ),
-                              ],
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 20.0),
-                              child: Divider(
-                                color: AppTheme.of(context)
-                                    .primaryAppText
-                                    .withOpacity(0.3),
-                                height: 1,
-                                thickness: 1,
-                              ),
-                            ),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  height: 34,
-                                  width: 34,
-                                  child: SvgPicture.asset(
-                                      "assets/svg/phone_solid.svg"),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 16),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        heroContentText(
-                                            context,
-                                            'Contact',
-                                            AppTheme.of(context).title2,
-                                            AppTheme.of(context).blackColor),
-                                        heroContentText(
-                                            context,
-                                            '+91 7200474487',
-                                            AppTheme.of(context).mediumTitle3,
-                                            AppTheme.of(context).secondaryText),
-                                        const SizedBox(
-                                          height: 14,
-                                        ),
-                                      ],
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 34,
+                                      width: 34,
+                                      child: SvgPicture.asset(
+                                          "assets/svg/phone_solid.svg"),
                                     ),
-                                  ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 16),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            heroContentText(
+                                                context,
+                                                'Phone',
+                                                AppTheme.of(context).title2,
+                                                AppTheme.of(context)
+                                                    .blackColor),
+                                            heroContentText(
+                                                context,
+                                                '+91 7904661052\n+91 7305261052',
+                                                AppTheme.of(context)
+                                                    .mediumTitle3,
+                                                AppTheme.of(context)
+                                                    .secondaryText),
+                                            const SizedBox(
+                                              height: 14,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
                           ],
                         ),
                       ),

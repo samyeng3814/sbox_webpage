@@ -462,13 +462,13 @@ class _LargeScreenLayoutState extends State<LargeScreenLayout> {
                                           children: [
                                             heroContentText(
                                                 context,
-                                                'Contact',
+                                                'Email',
                                                 AppTheme.of(context).title2,
                                                 AppTheme.of(context)
                                                     .blackColor),
                                             heroContentText(
                                                 context,
-                                                'info@sbox.ltd',
+                                                'vel@sbox.ltd\nvel@sameta.in',
                                                 AppTheme.of(context)
                                                     .mediumTitle3,
                                                 AppTheme.of(context)
@@ -512,13 +512,13 @@ class _LargeScreenLayoutState extends State<LargeScreenLayout> {
                                           children: [
                                             heroContentText(
                                                 context,
-                                                'Contact',
+                                                'Phone',
                                                 AppTheme.of(context).title2,
                                                 AppTheme.of(context)
                                                     .blackColor),
                                             heroContentText(
                                                 context,
-                                                '+91 7200474487',
+                                                '+91 7904661052\n+91 7305261052',
                                                 AppTheme.of(context)
                                                     .mediumTitle3,
                                                 AppTheme.of(context)

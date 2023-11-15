@@ -413,7 +413,9 @@ class SmallScreenLayout extends StatelessWidget {
                                 padding:
                                     const EdgeInsets.symmetric(vertical: 20.0),
                                 child: Divider(
-                                  color: AppTheme.of(context).primaryAppText .withOpacity(0.3),
+                                  color: AppTheme.of(context)
+                                      .primaryAppText
+                                      .withOpacity(0.3),
                                   height: 1,
                                   thickness: 1,
                                 ),
@@ -422,8 +424,8 @@ class SmallScreenLayout extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   SizedBox(
-                                    height: 24,
-                                    width: 24,
+                                    height: 34,
+                                    width: 34,
                                     child: SvgPicture.asset(
                                         "assets/svg/envelope_solid.svg"),
                                   ),
@@ -437,12 +439,12 @@ class SmallScreenLayout extends StatelessWidget {
                                         children: [
                                           heroContentText(
                                               context,
-                                              'Contact',
+                                              'Email',
                                               AppTheme.of(context).title2,
                                               AppTheme.of(context).blackColor),
                                           heroContentText(
                                               context,
-                                              'info@sbox.ltd',
+                                              'vel@sbox.ltd\nvel@sameta.in',
                                               AppTheme.of(context).mediumTitle3,
                                               AppTheme.of(context)
                                                   .secondaryText),
@@ -470,8 +472,8 @@ class SmallScreenLayout extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   SizedBox(
-                                    height: 24,
-                                    width: 24,
+                                    height: 34,
+                                    width: 34,
                                     child: SvgPicture.asset(
                                         "assets/svg/phone_solid.svg"),
                                   ),
@@ -485,12 +487,12 @@ class SmallScreenLayout extends StatelessWidget {
                                         children: [
                                           heroContentText(
                                               context,
-                                              'Contact',
+                                              'Phone',
                                               AppTheme.of(context).title2,
                                               AppTheme.of(context).blackColor),
                                           heroContentText(
                                               context,
-                                              '+91 7200474487',
+                                              '+91 7904661052\n+91 7305261052',
                                               AppTheme.of(context).mediumTitle3,
                                               AppTheme.of(context)
                                                   .secondaryText),
