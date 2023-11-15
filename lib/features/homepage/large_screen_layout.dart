@@ -436,7 +436,9 @@ class _LargeScreenLayoutState extends State<LargeScreenLayout> {
                                   padding: const EdgeInsets.symmetric(
                                       vertical: 20.0),
                                   child: Divider(
-                                    color: AppTheme.of(context).primaryAppText,
+                                    color: AppTheme.of(context)
+                                        .primaryAppText
+                                        .withOpacity(0.3),
                                     height: 1,
                                     thickness: 1,
                                   ),
@@ -484,7 +486,9 @@ class _LargeScreenLayoutState extends State<LargeScreenLayout> {
                                   padding: const EdgeInsets.symmetric(
                                       vertical: 20.0),
                                   child: Divider(
-                                    color: AppTheme.of(context).primaryAppText,
+                                    color: AppTheme.of(context)
+                                        .primaryAppText
+                                        .withOpacity(0.3),
                                     height: 1,
                                     thickness: 1,
                                   ),
@@ -532,101 +536,101 @@ class _LargeScreenLayoutState extends State<LargeScreenLayout> {
                             ),
                           ),
                         ),
-                        Expanded(
-                          child: Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 60.0),
-                            child: Column(
-                              children: [
-                                Form(
-                                    child: Column(
-                                  children: [
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(bottom: 14.0),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          heroContentText(
-                                            context,
-                                            'Your Name',
-                                            AppTheme.of(context).mediumTitle2,
-                                            AppTheme.of(context).blackColor,
-                                          ),
-                                          textFormField(context, nameFocusNode,
-                                              nameController, "Your Name", 1),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(bottom: 14.0),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          heroContentText(
-                                            context,
-                                            'Your Mail',
-                                            AppTheme.of(context).mediumTitle2,
-                                            AppTheme.of(context).blackColor,
-                                          ),
-                                          textFormField(context, mailFocusNode,
-                                              mailController, "Your Mail", 1),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(bottom: 14.0),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          heroContentText(
-                                            context,
-                                            'Your Subject',
-                                            AppTheme.of(context).mediumTitle2,
-                                            AppTheme.of(context).blackColor,
-                                          ),
-                                          textFormField(
-                                              context,
-                                              subjectFocusNode,
-                                              subjectController,
-                                              "Your Subject",
-                                              1),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(bottom: 14.0),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          heroContentText(
-                                            context,
-                                            'Your Message',
-                                            AppTheme.of(context).mediumTitle2,
-                                            AppTheme.of(context).blackColor,
-                                          ),
-                                          textFormField(
-                                              context,
-                                              messageFocusNode,
-                                              messageController,
-                                              "Your Message",
-                                              5),
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ))
-                              ],
-                            ),
-                          ),
-                        ),
+                        // Expanded(
+                        //   child: Padding(
+                        //     padding:
+                        //         const EdgeInsets.symmetric(horizontal: 60.0),
+                        //     child: Column(
+                        //       children: [
+                        //         Form(
+                        //             child: Column(
+                        //           children: [
+                        //             Padding(
+                        //               padding:
+                        //                   const EdgeInsets.only(bottom: 14.0),
+                        //               child: Column(
+                        //                 crossAxisAlignment:
+                        //                     CrossAxisAlignment.start,
+                        //                 children: [
+                        //                   heroContentText(
+                        //                     context,
+                        //                     'Your Name',
+                        //                     AppTheme.of(context).mediumTitle2,
+                        //                     AppTheme.of(context).blackColor,
+                        //                   ),
+                        //                   textFormField(context, nameFocusNode,
+                        //                       nameController, "Your Name", 1),
+                        //                 ],
+                        //               ),
+                        //             ),
+                        //             Padding(
+                        //               padding:
+                        //                   const EdgeInsets.only(bottom: 14.0),
+                        //               child: Column(
+                        //                 crossAxisAlignment:
+                        //                     CrossAxisAlignment.start,
+                        //                 children: [
+                        //                   heroContentText(
+                        //                     context,
+                        //                     'Your Mail',
+                        //                     AppTheme.of(context).mediumTitle2,
+                        //                     AppTheme.of(context).blackColor,
+                        //                   ),
+                        //                   textFormField(context, mailFocusNode,
+                        //                       mailController, "Your Mail", 1),
+                        //                 ],
+                        //               ),
+                        //             ),
+                        //             Padding(
+                        //               padding:
+                        //                   const EdgeInsets.only(bottom: 14.0),
+                        //               child: Column(
+                        //                 crossAxisAlignment:
+                        //                     CrossAxisAlignment.start,
+                        //                 children: [
+                        //                   heroContentText(
+                        //                     context,
+                        //                     'Your Subject',
+                        //                     AppTheme.of(context).mediumTitle2,
+                        //                     AppTheme.of(context).blackColor,
+                        //                   ),
+                        //                   textFormField(
+                        //                       context,
+                        //                       subjectFocusNode,
+                        //                       subjectController,
+                        //                       "Your Subject",
+                        //                       1),
+                        //                 ],
+                        //               ),
+                        //             ),
+                        //             Padding(
+                        //               padding:
+                        //                   const EdgeInsets.only(bottom: 14.0),
+                        //               child: Column(
+                        //                 crossAxisAlignment:
+                        //                     CrossAxisAlignment.start,
+                        //                 children: [
+                        //                   heroContentText(
+                        //                     context,
+                        //                     'Your Message',
+                        //                     AppTheme.of(context).mediumTitle2,
+                        //                     AppTheme.of(context).blackColor,
+                        //                   ),
+                        //                   textFormField(
+                        //                       context,
+                        //                       messageFocusNode,
+                        //                       messageController,
+                        //                       "Your Message",
+                        //                       5),
+                        //                 ],
+                        //               ),
+                        //             )
+                        //           ],
+                        //         ))
+                        //       ],
+                        //     ),
+                        //   ),
+                        // ),
                       ],
                     ),
                   ],

@@ -13,13 +13,13 @@ Column typeOfServices(
         radius: ResponsiveWidget.isLargeScreen(context)
             ? 84
             : ResponsiveWidget.isMediumScreen(context)
-                ? 70
+                ? 68
                 : 74,
         child: CircleAvatar(
           radius: ResponsiveWidget.isLargeScreen(context)
               ? 78
               : ResponsiveWidget.isMediumScreen(context)
-                  ? 62
+                  ? 60
                   : 68,
           backgroundColor: Colors.white,
           child: Image.asset(
